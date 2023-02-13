@@ -33,9 +33,25 @@ function ListRequestsContainer(props) {
     setRequestsList(changedRequestsList);
   }, [props.requestsList]);
 
-  return (
-    <>
-      {requestsList}
-    </>
-  )
+  return <>{requestsList}</>;
 }
+
+const mapStateToProps = (state): {} => {
+  debugger;
+  return {
+    requestsList: state.common,
+  };
+};
+
+const mapDispatchToProps = (dispatch): {} => {
+  return {
+    handleSubmit: (dispatch) => {
+      debugger;
+    },
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ListRequestsContainer);
