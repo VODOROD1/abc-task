@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './ListRequests.module.scss';
 
+// @ts-ignore
 function ListRequests({ requestNumber, date, clientName }) {
   return (
     <div className={styles.wrapper}>

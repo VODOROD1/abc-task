@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 // @ts-ignore
-import RequestForm from "./pages/RequestForm/RequestForm.tsx";
+import RequestForm from "./pages/RequestForm/RequestFormContainer.tsx";
 // @ts-ignore
 import ListRequests from "./pages/ListRequests/ListRequestsContainer.tsx";
 import { Route, Routes } from "react-router-dom";

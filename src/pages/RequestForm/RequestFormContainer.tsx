@@ -4,21 +4,21 @@ import { connect } from "react-redux";
 
 function RequestFormContainer() {
 
-    return (
-        <RequestForm />
-    )
+  return (
+      <RequestForm />
+  )
 }
 
-const mapStateToProps = (state): {} => {
+const mapStateToProps = (state: any): {} => {
     debugger;
     return {
       
     };
   };
   
-  const mapDispatchToProps = (dispatch): {} => {
+  const mapDispatchToProps = (dispatch: any): {} => {
     return {
-      handleSubmit: (dispatch) => {
+      handleSubmit: (dispatch: any) => {
         debugger;
       },
     };

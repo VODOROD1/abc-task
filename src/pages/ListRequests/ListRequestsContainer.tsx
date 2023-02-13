@@ -3,17 +3,17 @@ import React from "react";
 import ListRequests from "./ListRequests.tsx";
 import { connect } from "react-redux";
 
-type RequestType = {
-  requestNumber: number;
-  date: string;
-  clientName: string;
-  clientPhonenumber: string;
-  managerName: string;
-  requestDescription: string;
-  requestStatus: string;
-};
+// type RequestType = {
+//   requestNumber: number;
+//   date: string;
+//   clientName: string;
+//   clientPhonenumber: string;
+//   managerName: string;
+//   requestDescription: string;
+//   requestStatus: string;
+// };
 
-function ListRequestsContainer(props) {
+function ListRequestsContainer(props: any) {
   debugger;
   const [requestsList, setRequestsList] = React.useState<any>([]);
   React.useEffect(() => {
@@ -36,16 +36,16 @@ function ListRequestsContainer(props) {
   return <>{requestsList}</>;
 }
 
-const mapStateToProps = (state): {} => {
+const mapStateToProps = (state: any): {} => {
   debugger;
   return {
     requestsList: state.common,
   };
 };
 
-const mapDispatchToProps = (dispatch): {} => {
+const mapDispatchToProps = (dispatch: any): {} => {
   return {
-    handleSubmit: (dispatch) => {
+    handleSubmit: (dispatch: any) => {
       debugger;
     },
   };

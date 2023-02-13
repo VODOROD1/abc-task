@@ -1,8 +1,9 @@
 import React from "react";
 import { Form, Field } from 'react-final-form';
 import styles from './RequestForm.module.scss';
+import { reduxForm } from "redux-form";
 
-const RequestReduxForm = reduxForm({ form: "request" })((props) => {
+const RequestReduxForm = reduxForm({ form: "request" })((props: any) => {
   return (
     <Form
       initialValues={{
@@ -31,4 +32,4 @@ const RequestReduxForm = reduxForm({ form: "request" })((props) => {
   );
 });
 
-export default RequestForm;
+export default RequestReduxForm;
