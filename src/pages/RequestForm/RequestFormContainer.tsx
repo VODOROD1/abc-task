@@ -1,30 +1,48 @@
-import React from 'react';
-import RequestForm from './RequestForm';
+import React from "react";
+import RequestReduxForm from "./RequestForm1";
 import { connect } from "react-redux";
+import { addRequest } from "../../store/action"
 
-function RequestFormContainer() {
+function RequestFormContainer(props: any) {
+  debugger;
+  let tempSubmit = (data: any) => {
+    debugger;
+  }
 
   return (
-      <RequestForm />
-  )
+    <RequestReduxForm 
+      tempSubmit={tempSubmit}
+      handleSubmit={props.handleSubmit}
+      {...props}
+    />
+  );
 }
 
 const mapStateToProps = (state: any): {} => {
-    debugger;
-    return {
-      
-    };
+  debugger;
+  return {
+    initialValues: {
+      requestNumber: state.initialDataForm.requestNumber,
+      requestStatus: state.initialDataForm.requestStatus,
+      clientName: state.initialDataForm.clientName,
+      clientPhonenumber: state.initialDataForm.clientPhonenumber,
+      managerName: state.initialDataForm.managerName,
+      date: state.initialDataForm.date,
+      requestDescription: state.initialDataForm.requestDescription,
+    },
   };
-  
-  const mapDispatchToProps = (dispatch: any): {} => {
-    return {
-      handleSubmit: (dispatch: any) => {
-        debugger;
-      },
-    };
+};
+
+const mapDispatchToProps = (dispatch: any): {} => {
+  return {
+    handleSubmit: (data: any) => {
+      debugger;
+      dispatch(addRequest(data));
+    },
   };
-  
+};
+
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(RequestFormContainer);
