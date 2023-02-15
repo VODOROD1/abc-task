@@ -11,12 +11,15 @@ import data from "../assets/data.json";
 //     value: any
 // }
 
-let initialState: any = data.requests;
+let initialState: any = {
+  requestsList: data.requests,
+  choicenRequest: data.requests[0]
+};
 debugger;
 
 let initialStateForm: any = {
   requestNumber: 99,
-  requestStatus: "новая99",
+  requestStatus: "новая",
   clientName: "Clien99",
   clientPhonenumber: "9-999-999-99-99",
   managerName: "Manager9",
@@ -24,36 +27,37 @@ let initialStateForm: any = {
   requestDescription: "This is some request description 9",
 };
 
-const initialFormReducer = (state = initialStateForm, action: any) => {
-  switch (action.type) {
-    case "":
-      return { ...state };
-    default:
-      return state;
-  }
-};
+// const initialFormReducer = (state = initialState.requestsList[0], action: any) => {
+//   switch (action.type) {
+    
+//     default:
+//       return state;
+//   }
+// };
 
 function commonReducer(state: any = initialState, action: any) {
   switch (action.type) {
     case "ADD_REQUEST":
       debugger;
-      let newRequest = {};
-      // action.data.currentTarget.
-
-      // return { ...state,
-      //   common: [...state].push(action.data)
-      // }
-      return { ...state };
+      return {
+        ...state,
+        requestsList: [...state.requestsList, action.data],
+      };
+    case "EDIT_REQUEST":
+      debugger;
+      let request = state.requestsList.filter((request: any) => request.requestNumber === action.data)[0];
+      return {
+        ...state, choicenRequest: request
+      };
     default:
       return state;
   }
-  debugger;
 }
 
 let reducers = combineReducers({
   common: commonReducer,
   form: formReducer,
-  initialDataForm: initialFormReducer,
+  // initialDataForm: initialFormReducer,
 });
 
 const store = createStore(reducers);

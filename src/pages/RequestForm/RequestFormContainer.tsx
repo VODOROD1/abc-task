@@ -1,5 +1,5 @@
 import React from "react";
-import RequestReduxForm from "./RequestForm1";
+import RequestReduxForm from "./RequestForm";
 import { connect } from "react-redux";
 import { addRequest } from "../../store/action"
 
@@ -22,13 +22,13 @@ const mapStateToProps = (state: any): {} => {
   debugger;
   return {
     initialValues: {
-      requestNumber: state.initialDataForm.requestNumber,
-      requestStatus: state.initialDataForm.requestStatus,
-      clientName: state.initialDataForm.clientName,
-      clientPhonenumber: state.initialDataForm.clientPhonenumber,
-      managerName: state.initialDataForm.managerName,
-      date: state.initialDataForm.date,
-      requestDescription: state.initialDataForm.requestDescription,
+      requestNumber: state.common.choicenRequest.requestNumber,
+      requestStatus: state.common.choicenRequest.requestStatus,
+      clientName: state.common.choicenRequest.clientName,
+      clientPhonenumber: state.common.choicenRequest.clientPhonenumber,
+      managerName: state.common.choicenRequest.managerName,
+      date: state.common.choicenRequest.date,
+      requestDescription: state.common.choicenRequest.requestDescription,
     },
   };
 };

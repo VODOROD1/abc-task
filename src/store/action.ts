@@ -5,3 +5,17 @@ export function addRequest(data: any) {
         data
     }
 }
+
+export function editRequest(requestNumber: number) {
+    return {
+        type: "EDIT_REQUEST",
+        data: requestNumber
+    }
+}
+
+export function changeRequest(requestNumber: number) {
+    return {
+        type: "CHANGE_REQUEST",
+        requestNumber
+    }
+}

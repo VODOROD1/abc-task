@@ -1,11 +1,20 @@
 import React from "react";
 import styles from './ListRequests.module.scss';
+import { useNavigate } from "react-router-dom";
 
 // @ts-ignore
-function ListRequests({ requestNumber, date, clientName }) {
+function ListRequests({ requestNumber, date, clientName, editRequest }) {
+  let navigate = useNavigate();
+
+  const onEditRequest = (requestNumber: number) => {
+    debugger;
+    editRequest(requestNumber);
+    navigate("/request-form");
+  }
+
   return (
     <div className={styles.wrapper}>
-      <table>
+      <table className={styles.table} onClick={() => onEditRequest(requestNumber)}>
         <thead>
           <tr>
             <th>Номер заявки</th>
