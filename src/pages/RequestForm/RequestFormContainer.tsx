@@ -1,13 +1,27 @@
 import React from "react";
 import RequestReduxForm from "./RequestForm";
 import { connect } from "react-redux";
-import { addRequest } from "../../store/action"
+import { addRequestAC } from "../../store/action"
 
 function RequestFormContainer(props: any) {
+  // флаг для того чтобы можно было отличить:
+  // идет ли процесс создания нового запроса
+  // или же редактирование уже существующего 
+  let [isEdit, setFlag] = React.useState(false);
+
+  React.useEffect(() => {
+    if(props.initialValues.requestStatus) {
+      setFlag(true)
+    } else {
+      setFlag(false)
+    }
+  }, [props])
+
   return (
     <RequestReduxForm 
       handleSubmit={props.handleSubmit}
       {...props}
+      isEdit
     />
   );
 }
@@ -29,9 +43,9 @@ const mapStateToProps = (state: any): {} => {
 
 const mapDispatchToProps = (dispatch: any): {} => {
   return {
-    handleSubmit: (data: any) => {
+    addRequest: (data: any) => {
       debugger;
-      dispatch(addRequest(data));
+      dispatch(addRequestAC(data));
     },
   };
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Header from "./Header";
-import { addRequestFromHead } from '../../store/action'
+import { addRequestFromHeadAC } from '../../store/action'
 
 function HeaderContainer(props: any) {
   debugger;
@@ -19,7 +19,7 @@ const mapStateToProps = (state: any): {} => {
 const mapDispatchToProps = (dispatch: any): {} => {
   return {
     handleAddRequest: (data: any) => {
-        dispatch(addRequestFromHead());
+        dispatch(addRequestFromHeadAC());
     },
   };
 };

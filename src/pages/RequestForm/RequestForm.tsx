@@ -201,7 +201,7 @@ const RequestForm = (props: any) => {
             </tbody>
           </table>
           <button className={styles.createButton} type={"submit"}>
-            Создать
+            {props.isEdit ? "Изменить" : "Создать"}
           </button>
         </form>
       )}

@@ -1,4 +1,4 @@
-export function addRequest(data: any) {
+export function addRequestAC(data: any) {
   debugger;
   return {
     type: "ADD_REQUEST",
@@ -6,7 +6,7 @@ export function addRequest(data: any) {
   };
 }
 
-export function addRequestFromHead() {
+export function addRequestFromHeadAC() {
   debugger;
   return {
     type: "ADD_REQUEST_FROM_HEAD",
@@ -22,14 +22,14 @@ export function addRequestFromHead() {
   };
 }
 
-export function editRequest(requestNumber: number) {
+export function editRequestAC(requestNumber: number) {
   return {
     type: "EDIT_REQUEST",
     data: requestNumber,
   };
 }
 
-export function changeRequest(requestNumber: number) {
+export function changeRequestAC(requestNumber: number) {
   return {
     type: "CHANGE_REQUEST",
     requestNumber,

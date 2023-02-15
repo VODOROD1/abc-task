@@ -3,7 +3,7 @@ import React from "react";
 import ListRequests from "./ListRequests.tsx";
 import { connect } from "react-redux";
 // @ts-ignore
-import { editRequest } from "../../store/action.ts";
+import { editRequestAC } from "../../store/action.ts";
 
 // type RequestType = {
 //   requestNumber: number;
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch: any): {} => {
   return {
     editRequest: (requestNumber: number) => {
       debugger;
-      dispatch(editRequest(requestNumber))
+      dispatch(editRequestAC(requestNumber))
     },
   };
 };
