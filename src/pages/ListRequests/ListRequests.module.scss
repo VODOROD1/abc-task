@@ -10,9 +10,8 @@
 
 .table {
     cursor: pointer;
-
     th {
-        margin-left: 20px;
-        margin-right: 20px;
+        cursor: pointer;
+        padding: 10px 40px 10px 40px;
     }
 }

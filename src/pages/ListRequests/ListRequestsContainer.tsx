@@ -24,7 +24,7 @@ function ListRequestsContainer(props: any) {
           debugger
               return <ListRequests
                   requestNumber={elem.requestNumber}
-                  date={elem.date.toString()}
+                  date={elem.date}
                   clientName={elem.clientName}
                   key={elem.requestNumber}
                   editRequest={props.editRequest}

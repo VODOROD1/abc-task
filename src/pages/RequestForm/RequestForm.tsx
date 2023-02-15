@@ -12,7 +12,7 @@ const RequestForm = (props: any) => {
     clientName: props.initialValues.clientName,
     clientPhonenumber: props.initialValues.clientPhonenumber,
     managerName: props.initialValues.managerName,
-    date: new Date(),
+    date: new Date().toString(),
     requestDescription: props.initialValues.requestDescription,
   });
 
@@ -23,7 +23,7 @@ const RequestForm = (props: any) => {
       clientName: props.initialValues.clientName,
       clientPhonenumber: props.initialValues.clientPhonenumber,
       managerName: props.initialValues.managerName,
-      date: new Date(),
+      date: new Date().toString(),
       requestDescription: props.initialValues.requestDescription,
     });
   }, [props]);
@@ -38,6 +38,10 @@ const RequestForm = (props: any) => {
     debugger;
     props.handleSubmit(e);
     goListRequests();
+  };
+
+  const handleCancelButton = () => {
+    navigate("/list-requests");
   };
 
   const validate = (e: any) => {
@@ -76,7 +80,7 @@ const RequestForm = (props: any) => {
       validate={validate}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <table>
+          <table align="center">
             <tbody>
               <tr>
                 <td className={styles.fieldName}>
@@ -200,8 +204,11 @@ const RequestForm = (props: any) => {
               </tr>
             </tbody>
           </table>
-          <button className={styles.createButton} type={"submit"}>
+          <button className={styles.button} type={"submit"}>
             {props.isEdit ? "Изменить" : "Создать"}
+          </button>
+          <button className={styles.button} onClick={handleCancelButton}>
+              {"Отмена"}
           </button>
         </form>
       )}
