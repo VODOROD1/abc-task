@@ -41,6 +41,7 @@ const RequestForm = (props: any) => {
   };
 
   const handleCancelButton = () => {
+    props.clearForm();
     navigate("/list-requests");
   };
 

@@ -35,3 +35,9 @@ export function changeRequestAC(changedRequest: any) {
     data: changedRequest,
   };
 }
+
+export function clearFormAC() {
+  return {
+    type: "CLEAR_FORM"
+  }
+}

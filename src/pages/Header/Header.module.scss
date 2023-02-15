@@ -1,10 +1,35 @@
 .addButton {
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .addButton:hover {
-    background-color: lightblue;
-    color: white;
+  background-color: lightblue;
+  color: white;
+}
+
+.statusesTable {
+  border-spacing: 0px 0px;
+
+  th {
+    padding: 10px;
+    border-bottom: 2px darkgoldenrod solid;
+    border-right: 2px darkgoldenrod solid;
+    font-size: 15px;
+  }
+
+  th:last-child {
+    border-right: none;
+  }
+
+  td {
+    padding: 10px;
+    border-top: 2px darkgoldenrod solid;
+    border-right: 2px darkgoldenrod solid;
+  }
+
+  td:last-child {
+    border-right: none;
+  }
 }

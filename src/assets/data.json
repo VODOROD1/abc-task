@@ -5,7 +5,6 @@
             "requestStatus": "новая",
             "clientName": "Client1",
             "clientPhonenumber": "1-111-111-11-11", 
-            "managerName": "Manager1",
             "date": "2023-01-01",
             "requestDescription": "This is some request description 1"
          },
@@ -14,7 +13,6 @@
             "requestStatus": "в обработке",
             "clientName": "Client2",
             "clientPhonenumber": "1-111-111-11-11", 
-            "managerName": "Manager2",
             "date": "2023-01-02",
             "requestDescription": "This is some request description 2"
          },
@@ -23,7 +21,6 @@
             "requestStatus": "в работе",
             "clientName": "Client3",
             "clientPhonenumber": "1-111-111-11-11", 
-            "managerName": "Manager3",
             "date": "2023-01-03",
             "requestDescription": "This is some request description 3"
          },
@@ -32,7 +29,6 @@
             "requestStatus": "закрыто",
             "clientName": "Client4",
             "clientPhonenumber": "1-111-111-11-11", 
-            "managerName": "Manager4",
             "date": "2023-01-04",
             "requestDescription": "This is some request description 4"
          },
@@ -41,7 +37,6 @@
             "requestStatus": "новая",
             "clientName": "Client5",
             "clientPhonenumber": "1-111-111-11-11", 
-            "managerName": "Manager5",
             "date": "2023-01-05",
             "requestDescription": "This is some request description 5"
          }

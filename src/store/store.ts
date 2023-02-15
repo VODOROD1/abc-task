@@ -85,6 +85,12 @@ function commonReducer(state: any = initialState, action: any) {
         requestsList: [...changedRequestsList],
         choicenRequest: plug
       }
+    case "CLEAR_FORM":
+      debugger;
+      return {
+        ...state,
+        choicenRequest: plug
+      }
     default:
       return state;
   }

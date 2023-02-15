@@ -1,7 +1,7 @@
 import React from "react";
 import RequestReduxForm from "./RequestForm";
 import { connect } from "react-redux";
-import { addRequestAC, changeRequestAC } from "../../store/action";
+import { addRequestAC, changeRequestAC, clearFormAC } from "../../store/action";
 
 function RequestFormContainer(props: any) {
   // флаг для того чтобы можно было отличить:
@@ -59,6 +59,9 @@ const mapDispatchToProps = (dispatch: any): {} => {
     changeRequest: (data: any) => {
       debugger;
       dispatch(changeRequestAC(data));
+    },
+    clearForm: () => {
+      dispatch(clearFormAC())
     }
   };
 };
