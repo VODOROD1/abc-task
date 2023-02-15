@@ -6,29 +6,27 @@ import { reduxForm } from "redux-form";
 import { useNavigate } from "react-router-dom";
 
 const RequestForm = (props: any) => {
-    let [initialData, setInitialData] = React.useState(
-        {
-            requestNumber: props.initialValues.requestNumber,
-            requestStatus: props.initialValues.requestStatus,
-            clientName: props.initialValues.clientName,
-            clientPhonenumber: props.initialValues.clientPhonenumber,
-            managerName: props.initialValues.managerName,
-            date: new Date(),
-            requestDescription: props.initialValues.requestDescription
-        }
-    );
+  let [initialData, setInitialData] = React.useState({
+    requestNumber: props.initialValues.requestNumber,
+    requestStatus: props.initialValues.requestStatus,
+    clientName: props.initialValues.clientName,
+    clientPhonenumber: props.initialValues.clientPhonenumber,
+    managerName: props.initialValues.managerName,
+    date: new Date(),
+    requestDescription: props.initialValues.requestDescription,
+  });
 
   React.useEffect(() => {
     setInitialData({
-        requestNumber: props.initialValues.requestNumber,
-        requestStatus: props.initialValues.requestStatus,
-        clientName: props.initialValues.clientName,
-        clientPhonenumber: props.initialValues.clientPhonenumber,
-        managerName: props.initialValues.managerName,
-        date: new Date(),
-        requestDescription: props.initialValues.requestDescription
-    })
-  }, [props])
+      requestNumber: props.initialValues.requestNumber,
+      requestStatus: props.initialValues.requestStatus,
+      clientName: props.initialValues.clientName,
+      clientPhonenumber: props.initialValues.clientPhonenumber,
+      managerName: props.initialValues.managerName,
+      date: new Date(),
+      requestDescription: props.initialValues.requestDescription,
+    });
+  }, [props]);
 
   let navigate = useNavigate();
 
@@ -88,11 +86,7 @@ const RequestForm = (props: any) => {
                   <Field name="requestNumber">
                     {({ input, meta }) => (
                       <div>
-                        <input
-                          type="text"
-                          readOnly
-                          {...input}
-                        />
+                        <input type="text" readOnly {...input} />
                         {meta.touched && meta.error && (
                           <span>{meta.error}</span>
                         )}
@@ -123,11 +117,7 @@ const RequestForm = (props: any) => {
                   <Field name="clientName">
                     {({ input, meta }) => (
                       <div>
-                        <input
-                          type="text"
-                          {...input}
-                          placeholder="+7 (888)-888-88-88"
-                        />
+                        <input type="text" {...input} />
                         {meta.touched && meta.error && (
                           <span>{meta.error}</span>
                         )}
@@ -165,11 +155,7 @@ const RequestForm = (props: any) => {
                   <Field name="managerName">
                     {({ input, meta }) => (
                       <div>
-                        <input
-                          type="text"
-                          {...input}
-                          placeholder="+7 (888)-888-88-88"
-                        />
+                        <input type="text" {...input} />
                         {meta.touched && meta.error && (
                           <span>{meta.error}</span>
                         )}
@@ -186,11 +172,7 @@ const RequestForm = (props: any) => {
                   <Field name="date">
                     {({ input, meta }) => (
                       <div>
-                        <input
-                          type="text"
-                          {...input}
-                          placeholder="+7 (888)-888-88-88"
-                        />
+                        <input type="text" {...input} />
                         {meta.touched && meta.error && (
                           <span>{meta.error}</span>
                         )}

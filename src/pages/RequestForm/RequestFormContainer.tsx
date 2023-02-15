@@ -4,14 +4,8 @@ import { connect } from "react-redux";
 import { addRequest } from "../../store/action"
 
 function RequestFormContainer(props: any) {
-  debugger;
-  let tempSubmit = (data: any) => {
-    debugger;
-  }
-
   return (
     <RequestReduxForm 
-      tempSubmit={tempSubmit}
       handleSubmit={props.handleSubmit}
       {...props}
     />
@@ -26,7 +20,7 @@ const mapStateToProps = (state: any): {} => {
       requestStatus: state.common.choicenRequest.requestStatus,
       clientName: state.common.choicenRequest.clientName,
       clientPhonenumber: state.common.choicenRequest.clientPhonenumber,
-      managerName: state.common.choicenRequest.managerName,
+      managerName: state.common.managerName,
       date: state.common.choicenRequest.date,
       requestDescription: state.common.choicenRequest.requestDescription,
     },

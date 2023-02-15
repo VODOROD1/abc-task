@@ -13,19 +13,28 @@ import data from "../assets/data.json";
 
 let initialState: any = {
   requestsList: data.requests,
-  choicenRequest: data.requests[0]
+  choicenRequest: {
+      requestNumber: null,
+      requestStatus: null,
+      clientName: null,
+      clientPhonenumber: null,
+      managerName: null,
+      date: null,
+      requestDescription: null,
+    },
+  managerName: "John Smith"
 };
 debugger;
 
-let initialStateForm: any = {
-  requestNumber: 99,
-  requestStatus: "новая",
-  clientName: "Clien99",
-  clientPhonenumber: "9-999-999-99-99",
-  managerName: "Manager9",
-  date: "2023-09-09",
-  requestDescription: "This is some request description 9",
-};
+// let initialStateForm: any = {
+//   requestNumber: 99,
+//   requestStatus: "новая",
+//   clientName: "Clien99",
+//   clientPhonenumber: "9-999-999-99-99",
+//   managerName: "Manager9",
+//   date: "2023-09-09",
+//   requestDescription: "This is some request description 9",
+// };
 
 // const initialFormReducer = (state = initialState.requestsList[0], action: any) => {
 //   switch (action.type) {
@@ -43,6 +52,12 @@ function commonReducer(state: any = initialState, action: any) {
         ...state,
         requestsList: [...state.requestsList, action.data],
       };
+    case "ADD_REQUEST_FROM_HEAD":
+      debugger;
+      return {
+        ...state,
+        choicenRequest: action.data
+      }
     case "EDIT_REQUEST":
       debugger;
       let request = state.requestsList.filter((request: any) => request.requestNumber === action.data)[0];

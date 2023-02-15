@@ -5,12 +5,16 @@ import RequestForm from "./pages/RequestForm/RequestFormContainer.tsx";
 // @ts-ignore
 import ListRequests from "./pages/ListRequests/ListRequestsContainer.tsx";
 import { Route, Routes } from "react-router-dom";
+// @ts-ignore
+import Header from "./pages/Header/HeaderContainer.tsx";
 
 function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <Header />
+      </header>
       <main>
         <Routes>
           <Route path="/list-requests" element={

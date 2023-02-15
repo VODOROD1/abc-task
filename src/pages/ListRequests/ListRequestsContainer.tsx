@@ -43,7 +43,7 @@ const mapStateToProps = (state: any): {} => {
   debugger;
   return {
     requestsList: state.common.requestsList,
-
+    managerName: state.common.managerName
   };
 };
 
