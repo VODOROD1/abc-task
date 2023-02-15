@@ -39,13 +39,13 @@ const mapStateToProps = (state: any): {} => {
   debugger;
   return {
     initialValues: {
-      requestNumber: state.common.choicenRequest.requestNumber,
-      requestStatus: state.common.choicenRequest.requestStatus,
-      clientName: state.common.choicenRequest.clientName,
-      clientPhonenumber: state.common.choicenRequest.clientPhonenumber,
+      requestNumber: state.common.choicenRequest?.requestNumber,
+      requestStatus: state.common.choicenRequest?.requestStatus,
+      clientName: state.common.choicenRequest?.clientName,
+      clientPhonenumber: state.common.choicenRequest?.clientPhonenumber,
       managerName: state.common.managerName,
-      date: state.common.choicenRequest.date,
-      requestDescription: state.common.choicenRequest.requestDescription,
+      date: state.common.choicenRequest?.date,
+      requestDescription: state.common.choicenRequest?.requestDescription,
     },
   };
 };

@@ -11,17 +11,20 @@ import data from "../assets/data.json";
 //     value: any
 // }
 
+// Заглушка для обнуления полей формы
+const plug = {
+  requestNumber: null,
+  requestStatus: null,
+  clientName: null,
+  clientPhonenumber: null,
+  managerName: null,
+  date: null,
+  requestDescription: null,
+}
+
 let initialState: any = {
   requestsList: data.requests,
-  choicenRequest: {
-    requestNumber: null,
-    requestStatus: null,
-    clientName: null,
-    clientPhonenumber: null,
-    managerName: null,
-    date: null,
-    requestDescription: null,
-  },
+  choicenRequest: plug,
   managerName: "John Smith",
 };
 debugger;
@@ -69,14 +72,19 @@ function commonReducer(state: any = initialState, action: any) {
       };
     case "CHANGE_REQUEST":
       debugger;
-      return state.requestsList.map(
-        (request: any) => {
-          if(request.requestNumber === action.data.requestNumber) {
-            return {...action.data}
-          } else {
-            return {...request}
-          }
-        });
+      let changedRequestsList = state.requestsList.map((request: any) => {
+        if (request.requestNumber === action.data.requestNumber) {
+          return { ...action.data };
+        } else {
+          return { ...request };
+        }
+      });
+      debugger;
+      return {
+        ...state,
+        requestsList: [...changedRequestsList],
+        choicenRequest: plug
+      }
     default:
       return state;
   }

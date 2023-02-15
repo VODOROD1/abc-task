@@ -17,26 +17,23 @@ import { editRequestAC } from "../../store/action.ts";
 
 function ListRequestsContainer(props: any) {
   debugger;
-  const [requestsList, setRequestsList] = React.useState<any>([]);
-  React.useEffect(() => {
-    // let temp = [...Object.values(props.requestsList)];
-    debugger;
-    let changedRequestsList = props.requestsList.map((elem: any) => {
-      return (
-        <ListRequests
-          requestNumber={elem.requestNumber}
-          date={elem.date}
-          clientName={elem.clientName}
-          key={elem.requestNumber}
-          editRequest={props.editRequest}
-        />
-      );
-    });
-    debugger;
-    setRequestsList(changedRequestsList);
-  }, [props.requestsList]);
-
-  return <>{requestsList}</>;
+  return (
+    <div>
+      {
+        [...props.requestsList.map((elem: any) => {
+          debugger
+              return <ListRequests
+                  requestNumber={elem.requestNumber}
+                  date={elem.date.toString()}
+                  clientName={elem.clientName}
+                  key={elem.requestNumber}
+                  editRequest={props.editRequest}
+                />
+            })
+          ]
+      }
+    </div>
+  )
 }
 
 const mapStateToProps = (state: any): {} => {
