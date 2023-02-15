@@ -55,7 +55,7 @@ const RequestForm = (props: any) => {
     }
 
     // Валидация телефона
-    if (e.clientPhonenumber?.match(/\d/g)?.length !== 12) {
+    if (e.clientPhonenumber?.match(/\d/g)?.length !== 11) {
       errors.clientPhonenumber = "Введены неверные символы!";
     }
 

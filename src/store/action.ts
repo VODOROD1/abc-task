@@ -29,9 +29,9 @@ export function editRequestAC(requestNumber: number) {
   };
 }
 
-export function changeRequestAC(requestNumber: number) {
+export function changeRequestAC(changedRequest: any) {
   return {
     type: "CHANGE_REQUEST",
-    requestNumber,
+    data: changedRequest,
   };
 }

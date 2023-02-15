@@ -1,7 +1,7 @@
 import React from "react";
 import RequestReduxForm from "./RequestForm";
 import { connect } from "react-redux";
-import { addRequestAC } from "../../store/action"
+import { addRequestAC, changeRequestAC } from "../../store/action";
 
 function RequestFormContainer(props: any) {
   // флаг для того чтобы можно было отличить:
@@ -17,11 +17,20 @@ function RequestFormContainer(props: any) {
     }
   }, [props])
 
+  const handleSubmit = (data: any) => {
+    debugger;
+    if(isEdit) {
+      props.changeRequest(data)
+    } else {
+      props.addRequest(data)
+    }
+  }
+
   return (
     <RequestReduxForm 
-      handleSubmit={props.handleSubmit}
+      handleSubmit={handleSubmit}
       {...props}
-      isEdit
+      isEdit={isEdit}
     />
   );
 }
@@ -47,6 +56,10 @@ const mapDispatchToProps = (dispatch: any): {} => {
       debugger;
       dispatch(addRequestAC(data));
     },
+    changeRequest: (data: any) => {
+      debugger;
+      dispatch(changeRequestAC(data));
+    }
   };
 };
 

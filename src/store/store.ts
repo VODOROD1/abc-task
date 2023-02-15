@@ -14,15 +14,15 @@ import data from "../assets/data.json";
 let initialState: any = {
   requestsList: data.requests,
   choicenRequest: {
-      requestNumber: null,
-      requestStatus: null,
-      clientName: null,
-      clientPhonenumber: null,
-      managerName: null,
-      date: null,
-      requestDescription: null,
-    },
-  managerName: "John Smith"
+    requestNumber: null,
+    requestStatus: null,
+    clientName: null,
+    clientPhonenumber: null,
+    managerName: null,
+    date: null,
+    requestDescription: null,
+  },
+  managerName: "John Smith",
 };
 debugger;
 
@@ -38,7 +38,7 @@ debugger;
 
 // const initialFormReducer = (state = initialState.requestsList[0], action: any) => {
 //   switch (action.type) {
-    
+
 //     default:
 //       return state;
 //   }
@@ -56,14 +56,27 @@ function commonReducer(state: any = initialState, action: any) {
       debugger;
       return {
         ...state,
-        choicenRequest: action.data
-      }
+        choicenRequest: action.data,
+      };
     case "EDIT_REQUEST":
       debugger;
-      let request = state.requestsList.filter((request: any) => request.requestNumber === action.data)[0];
+      let request = state.requestsList.filter(
+        (request: any) => request.requestNumber === action.data
+      )[0];
       return {
-        ...state, choicenRequest: request
+        ...state,
+        choicenRequest: request,
       };
+    case "CHANGE_REQUEST":
+      debugger;
+      return state.requestsList.map(
+        (request: any) => {
+          if(request.requestNumber === action.data.requestNumber) {
+            return {...action.data}
+          } else {
+            return {...request}
+          }
+        });
     default:
       return state;
   }
