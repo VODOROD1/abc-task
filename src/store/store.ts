@@ -11,7 +11,7 @@ const plug = {
   managerName: null,
   date: null,
   requestDescription: null,
-}
+};
 
 let initialState: any = {
   requestsList: data.requests,
@@ -50,13 +50,26 @@ function commonReducer(state: any = initialState, action: any) {
       return {
         ...state,
         requestsList: [...changedRequestsList],
-        choicenRequest: plug
-      }
+        choicenRequest: plug,
+      };
     case "CLEAR_FORM":
       return {
         ...state,
-        choicenRequest: plug
-      }
+        choicenRequest: plug,
+      };
+    case "CHANGE_STATUS": {
+      let changedRequestsList = state.requestsList.map((request: any) => {
+        if (request.requestNumber === action.data.requestNumber) {
+          return { ...request, requestStatus: action.data.requestStatus };
+        } else {
+          return { ...request };
+        }
+      });
+      return {
+        ...state,
+        requestsList: [...changedRequestsList],
+      };
+    }
     default:
       return state;
   }

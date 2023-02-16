@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Header = (props: any) => {
   let navigate = useNavigate();
 
-  const goToForm = () => {
+  const goToForm = (e: any) => {
     navigate("/request-form");
   };
 

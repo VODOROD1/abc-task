@@ -3,7 +3,7 @@ import React from "react";
 import ListRequests from "./ListRequests.tsx";
 import { connect } from "react-redux";
 // @ts-ignore
-import { editRequestAC } from "../../store/action.ts";
+import { changeStatusAC, editRequestAC } from "../../store/action.ts";
 
 function ListRequestsContainer(props: any) {
   return (
@@ -11,11 +11,13 @@ function ListRequestsContainer(props: any) {
       {
         [...props.requestsList.map((elem: any) => {
               return <ListRequests
+                  key={elem.requestNumber}
                   requestNumber={elem.requestNumber}
                   date={elem.date}
                   clientName={elem.clientName}
-                  key={elem.requestNumber}
                   editRequest={props.editRequest}
+                  status={elem.requestStatus}
+                  changeStatus={props.changeStatus}
                 />
             })
           ]
@@ -36,6 +38,9 @@ const mapDispatchToProps = (dispatch: any): {} => {
     editRequest: (requestNumber: number) => {
       dispatch(editRequestAC(requestNumber))
     },
+    changeStatus: (newStatusObj: any) => {
+      dispatch(changeStatusAC(newStatusObj))
+    }
   };
 };
 

@@ -39,3 +39,10 @@ export function clearFormAC() {
     type: "CLEAR_FORM"
   }
 }
+
+export function changeStatusAC(newStatusObj: string) {
+  return {
+    type: "CHANGE_STATUS",
+    data: newStatusObj
+  }
+}
