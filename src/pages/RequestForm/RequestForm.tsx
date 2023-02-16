@@ -30,16 +30,17 @@ const RequestForm = (props: any) => {
     setPhoneNumber(props.initialValues.clientPhonenumber);
   }, [props]);
 
-  
-
   let navigate = useNavigate();
 
   const goListRequests = () => {
     navigate("/list-requests");
   };
 
-  const onSubmit = (e: any) => {
-    props.handleSubmit(e);
+  const onSubmit = (formData: any) => {
+    props.handleSubmit({
+      ...formData,
+      clientPhonenumber: phoneNumber
+    });
     goListRequests();
   };
 
