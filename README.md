@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# This is testing task for Business Active Consult company.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
