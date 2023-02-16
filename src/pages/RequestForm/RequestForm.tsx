@@ -17,7 +17,6 @@ const RequestForm = (props: any) => {
   });
 
   React.useEffect(() => {
-    debugger;
     setInitialData({
       requestNumber: props.initialValues.requestNumber,
       requestStatus: props.initialValues.requestStatus,
@@ -36,7 +35,6 @@ const RequestForm = (props: any) => {
   };
 
   const onSubmit = (e: any) => {
-    debugger;
     props.handleSubmit(e);
     goListRequests();
   };
@@ -47,7 +45,6 @@ const RequestForm = (props: any) => {
   };
 
   const validate = (e: any) => {
-    debugger;
     const errors: any = {};
 
     // Валидация имени клиента

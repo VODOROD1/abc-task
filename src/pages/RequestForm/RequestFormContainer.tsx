@@ -51,11 +51,9 @@ const mapStateToProps = (state: any): {} => {
 const mapDispatchToProps = (dispatch: any): {} => {
   return {
     addRequest: (data: any) => {
-      debugger;
       dispatch(addRequestAC(data));
     },
     changeRequest: (data: any) => {
-      debugger;
       dispatch(changeRequestAC(data));
     },
     clearForm: () => {

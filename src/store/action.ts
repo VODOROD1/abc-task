@@ -1,5 +1,4 @@
 export function addRequestAC(data: any) {
-  debugger;
   return {
     type: "ADD_REQUEST",
     data,
@@ -7,7 +6,6 @@ export function addRequestAC(data: any) {
 }
 
 export function addRequestFromHeadAC() {
-  debugger;
   return {
     type: "ADD_REQUEST_FROM_HEAD",
     data: {

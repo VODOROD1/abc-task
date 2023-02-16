@@ -16,12 +16,10 @@ import { editRequestAC } from "../../store/action.ts";
 // };
 
 function ListRequestsContainer(props: any) {
-  debugger;
   return (
     <div>
       {
         [...props.requestsList.map((elem: any) => {
-          debugger
               return <ListRequests
                   requestNumber={elem.requestNumber}
                   date={elem.date}
@@ -37,7 +35,6 @@ function ListRequestsContainer(props: any) {
 }
 
 const mapStateToProps = (state: any): {} => {
-  debugger;
   return {
     requestsList: state.common.requestsList,
     managerName: state.common.managerName
@@ -47,7 +44,6 @@ const mapStateToProps = (state: any): {} => {
 const mapDispatchToProps = (dispatch: any): {} => {
   return {
     editRequest: (requestNumber: number) => {
-      debugger;
       dispatch(editRequestAC(requestNumber))
     },
   };

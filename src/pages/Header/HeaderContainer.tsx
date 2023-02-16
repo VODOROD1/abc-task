@@ -4,7 +4,6 @@ import Header from "./Header";
 import { addRequestFromHeadAC } from "../../store/action";
 
 function HeaderContainer(props: any) {
-  debugger;
   let [amountOfStatuses, setAmountOfStatuses] = React.useState({
     new: 0,
     inDevelop: 0,
@@ -43,7 +42,6 @@ function HeaderContainer(props: any) {
 }
 
 const mapStateToProps = (state: any): {} => {
-  debugger;
   return {
     requestsList: state.common.requestsList,
     managerName: state.common.managerName,
