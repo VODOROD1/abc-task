@@ -6,40 +6,38 @@ import { addRequestAC, changeRequestAC, clearFormAC } from "../../store/action";
 function RequestFormContainer(props: any) {
   // флаг для того чтобы можно было отличить:
   // идет ли процесс создания нового запроса
-  // или же редактирование уже существующего 
+  // или же редактирование уже существующего
   let [isEdit, setFlag] = React.useState(false);
 
   React.useEffect(() => {
-    if(props.initialValues.requestStatus) {
-      setFlag(true)
+    if (props.initialValues.requestStatus) {
+      setFlag(true);
     } else {
-      setFlag(false)
+      setFlag(false);
     }
-  }, [props])
+  }, [props]);
 
   const handleSubmit = (data: any) => {
-    debugger;
-    if(isEdit) {
-      props.changeRequest(data)
+    if (isEdit) {
+      props.changeRequest(data);
     } else {
-      props.addRequest(data)
+      props.addRequest(data);
     }
-  }
+  };
 
   return (
-    <RequestReduxForm 
-      handleSubmit={handleSubmit}
-      {...props}
-      isEdit={isEdit}
-    />
+    <RequestReduxForm handleSubmit={handleSubmit} {...props} isEdit={isEdit} />
   );
 }
 
 const mapStateToProps = (state: any): {} => {
-  debugger;
   return {
     initialValues: {
-      requestNumber: state.common.choicenRequest?.requestNumber,
+      // Добавляем номер запроса
+      requestNumber: state.common.choicenRequest.requestNumber
+        ? state.common.choicenRequest.requestNumber
+        : state.common.requestsList[state.common.requestsList.length - 1]
+            .requestNumber + 1,
       requestStatus: state.common.choicenRequest?.requestStatus,
       clientName: state.common.choicenRequest?.clientName,
       clientPhonenumber: state.common.choicenRequest?.clientPhonenumber,
@@ -61,8 +59,8 @@ const mapDispatchToProps = (dispatch: any): {} => {
       dispatch(changeRequestAC(data));
     },
     clearForm: () => {
-      dispatch(clearFormAC())
-    }
+      dispatch(clearFormAC());
+    },
   };
 };
 

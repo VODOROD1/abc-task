@@ -34,4 +34,4 @@ function ListRequests({ requestNumber, date, clientName, editRequest }) {
   );
 }
 
-export default ListRequests;
+export default React.memo(ListRequests);

@@ -17,6 +17,7 @@ const RequestForm = (props: any) => {
   });
 
   React.useEffect(() => {
+    debugger;
     setInitialData({
       requestNumber: props.initialValues.requestNumber,
       requestStatus: props.initialValues.requestStatus,
@@ -51,11 +52,6 @@ const RequestForm = (props: any) => {
 
     // Валидация имени клиента
     if (e.clientName?.length > 100) {
-      e.clientName = "Введены неверные символы!";
-    }
-
-    // Валидация имени менеджера
-    if (false) {
       e.clientName = "Введены неверные символы!";
     }
 
@@ -222,4 +218,4 @@ const RequestReduxForm = reduxForm({
   enableReinitialize: true,
 })(RequestForm);
 
-export default RequestReduxForm;
+export default React.memo(RequestReduxForm);

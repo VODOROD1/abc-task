@@ -31,6 +31,7 @@ function HeaderContainer(props: any) {
           break;
       }
     });
+    setAmountOfStatuses(localAmountOfStatuses);
   }, [props.requestsList]);
 
   return (
