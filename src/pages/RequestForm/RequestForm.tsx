@@ -1,6 +1,5 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
-// import { Field } from "redux-form";
 import styles from "./RequestForm.module.scss";
 import { reduxForm } from "redux-form";
 import { useNavigate } from "react-router-dom";

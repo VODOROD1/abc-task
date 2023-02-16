@@ -5,16 +5,6 @@ import { connect } from "react-redux";
 // @ts-ignore
 import { editRequestAC } from "../../store/action.ts";
 
-// type RequestType = {
-//   requestNumber: number;
-//   date: string;
-//   clientName: string;
-//   clientPhonenumber: string;
-//   managerName: string;
-//   requestDescription: string;
-//   requestStatus: string;
-// };
-
 function ListRequestsContainer(props: any) {
   return (
     <div>

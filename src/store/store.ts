@@ -2,15 +2,6 @@ import { combineReducers, createStore } from "redux";
 import { reducer as formReducer } from "redux-form";
 import data from "../assets/data.json";
 
-// type InitialStateType = {
-//     requestNumber: number,
-// }
-
-// type actionType = {
-//     type: string,
-//     value: any
-// }
-
 // Заглушка для обнуления полей формы
 const plug = {
   requestNumber: null,
