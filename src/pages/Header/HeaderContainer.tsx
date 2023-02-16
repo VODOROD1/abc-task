@@ -11,7 +11,13 @@ function HeaderContainer(props: any) {
     closed: 0,
   });
   React.useEffect(() => {
-    let localAmountOfStatuses = { ...amountOfStatuses };
+    debugger;
+    let localAmountOfStatuses = {
+      new: 0,
+      inDevelop: 0,
+      inWorking: 0,
+      closed: 0,
+    };
     props.requestsList.forEach((request: any) => {
       switch (request.requestStatus) {
         case "новая":
@@ -23,7 +29,7 @@ function HeaderContainer(props: any) {
         case "в работе":
           localAmountOfStatuses.inWorking += 1;
           break;
-        case "закрыто":
+        case "закрыта":
           localAmountOfStatuses.closed += 1;
           break;
         default:

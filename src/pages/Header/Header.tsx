@@ -24,7 +24,7 @@ const Header = (props: any) => {
               <th>новая</th>
               <th>в обработке</th>
               <th>в работе</th>
-              <th>закрыто</th>
+              <th>закрыта</th>
             </tr>
           </thead>
           <tbody>

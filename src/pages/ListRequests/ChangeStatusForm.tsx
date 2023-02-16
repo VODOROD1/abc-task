@@ -5,7 +5,6 @@ import { Form, Field } from "react-final-form";
 // @ts-ignore
 function ChangeStatusForm(props) {
     const onSubmit = (e: any) => {
-        debugger;
         props.onChangeStatus(e.target.value);
     }
 

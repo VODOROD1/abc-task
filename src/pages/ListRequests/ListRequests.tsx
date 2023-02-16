@@ -12,7 +12,6 @@ function ListRequests({ requestNumber, date, clientName, editRequest, status, ch
     if(e.target.getAttribute("class") === "statusList") {
       return false;
     }
-    // debugger;
     editRequest(requestNumber);
     navigate("/request-form");
   }
