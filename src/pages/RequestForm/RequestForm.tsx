@@ -3,6 +3,7 @@ import { Form, Field } from "react-final-form";
 import styles from "./RequestForm.module.scss";
 import { reduxForm } from "redux-form";
 import { useNavigate } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
 
 const RequestForm = (props: any) => {
   let [initialData, setInitialData] = React.useState({
@@ -14,6 +15,7 @@ const RequestForm = (props: any) => {
     date: new Date().toString(),
     requestDescription: props.initialValues.requestDescription,
   });
+  let [phoneNumber, setPhoneNumber] = React.useState("");
 
   React.useEffect(() => {
     setInitialData({
@@ -25,7 +27,10 @@ const RequestForm = (props: any) => {
       date: new Date().toString(),
       requestDescription: props.initialValues.requestDescription,
     });
+    setPhoneNumber(props.initialValues.clientPhonenumber);
   }, [props]);
+
+  
 
   let navigate = useNavigate();
 
@@ -52,9 +57,9 @@ const RequestForm = (props: any) => {
     }
 
     // Валидация телефона
-    if (e.clientPhonenumber?.match(/\d/g)?.length !== 11) {
-      errors.clientPhonenumber = "Введены неверные символы!";
-    }
+    // if (e.clientPhonenumber?.match(/\d/g)?.length !== 11) {
+    //   errors.clientPhonenumber = "Введены неверные символы!";
+    // }
 
     // Валидация поля для описанияа
     if (e.requestDescription?.length > 500) {
@@ -128,7 +133,7 @@ const RequestForm = (props: any) => {
                   <label>Телефон клиента</label>
                 </td>
                 <td className={styles.fieldValue}>
-                  <Field name="clientPhonenumber">
+                  {/* <Field name="clientPhonenumber">
                     {({ input, meta }) => (
                       <div>
                         <input
@@ -141,7 +146,12 @@ const RequestForm = (props: any) => {
                         )}
                       </div>
                     )}
-                  </Field>
+                  </Field> */}
+                  <PhoneInput
+                    country={'ru'}
+                    value={phoneNumber}
+                    onChange={phone => setPhoneNumber(phone)}
+                  />
                 </td>
               </tr>
               <tr>
